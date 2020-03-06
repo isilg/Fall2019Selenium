@@ -13,7 +13,7 @@ public class DriverFactory {
      * it will give us(return) WebDriver object
      */
 
-    public static WebDriver createADriver(String browserName){
+    public static WebDriver createDriver(String browserName){
         if (browserName.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
@@ -23,7 +23,6 @@ public class DriverFactory {
         }
 
     }
-
 
 
 }
