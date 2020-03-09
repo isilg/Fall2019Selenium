@@ -43,5 +43,4 @@ public class VerifyThatElementIsGone {
         driver.quit();
     }
 
-
 }
