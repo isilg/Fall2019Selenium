@@ -60,8 +60,8 @@ public class FindElementsTest {
          //          element doesn't exist!
          //   }
 
-         //RECAP: driver.findElement -> You can find 1 element
-         //       driver.findElements -> Find collection(list) of elements
+         //RECAP: driver.findElement -> You can find 1 element. If locator is wrong, NoSuchElementException
+         //       driver.findElements -> Find collection(list) of elements. Find lots of elements at once. Returns List<WebElement>. If locator is wrong or element is gone, you'll get empty list
          //       If there is no element with this locator -> You'll get exception
         }
 
