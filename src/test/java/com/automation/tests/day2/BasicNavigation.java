@@ -38,6 +38,7 @@ public class BasicNavigation {
 
         //go to another website within the same window
         driver.navigate().to("http://amazon.com");
+        //amazon has long title so we just used contain method not equals
         if (driver.getTitle().toLowerCase().contains("amazon")){
             System.out.println("TEST PASSED!");
         }else {

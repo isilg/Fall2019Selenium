@@ -5,9 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  * We need to do 2 things:
- *        1- Set up drivers (choremedriver)
+ *        1- Set up drivers (Ex/chromedriver)
  *        WebDriverManager.chromedriver().setup();
- *        2- Create object of chromedriver
+ *        2- Create driver object
  *        ChromeDriver driver = new ChromeDriver();
  */
 
