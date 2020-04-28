@@ -38,6 +38,8 @@ public class NestedFrame {
 
         //Go to bottom frame, bring the content in it
         // driver.switchTo().parentFrame();  -->> NoSuchFrameException
+        //If you switch to top to bottom frame
+        //.defaultContent(); --> means exit from frame, first exit then go back to the bottom one
         driver.switchTo().defaultContent();
         driver.switchTo().frame("frame-bottom");
         WebElement contentBottom = driver.findElement(By.tagName("body"));
