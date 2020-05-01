@@ -26,8 +26,8 @@ public class Test_For_iframe {
         driver.get("http://practice.cybertekschool.com/iframe");
         BrowserUtils.wait(2);
 
-        //The content inside the frame isnt visible to Selenium so before looking
-        //for that element we need to switch frame to see the inner HTML document
+        //The content inside the frame isnt visible to Selenium. So before looking
+        //for that element we need to switch frame to see the inner HTML document.
         //Once we switch we can specify name, id, index, or webelement of the frame
         //****** frame("mce_0_ifr")  -> <iframe ....> in icindeki code'a bak
         driver.switchTo().frame("mce_0_ifr");

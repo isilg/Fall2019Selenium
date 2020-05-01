@@ -33,7 +33,7 @@ public class FindElementsPractice {
         String expected = "Thank you for signing up. Click the button below to return to the home page.";
 
         WebElement message = driver.findElement(By.className("subheader"));
-        //             ⬇️  Web element(message) goes here
+     //               ⬇️  Web element(message) goes here
        String actual=message.getText();   //getText() returns visible text. Anything in between opening and closing tags is a visible text
 
         //If the text that message(Web Element) return equals to actual text then TEST PASSED!
