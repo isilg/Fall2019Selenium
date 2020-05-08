@@ -61,7 +61,8 @@ public class PracticeTests {
         BrowserUtils.wait(2);
 
         List<WebElement> checkBoxes =  driver.findElements(By.xpath("//input[1]"));
-        //List<WebElement> checkBoxes =  driver.findElements(By.tagName("input"));
+        //II.WAY -->>   //input[@type="checkbox][1]
+        //III. WAY -->> List<WebElement> checkBoxes =  driver.findElements(By.tagName("input"));
         BrowserUtils.wait(2);
 
         checkBoxes.get(0).click();
