@@ -111,9 +111,7 @@ public class CalenderEventsClass {
         String expectedTime = LocalTime.now(ZoneId.of("GMT-7")).format(DateTimeFormatter.ofPattern("h:m a"));
         String actualTime =driver.findElement(startTimeBy).getAttribute("value");
         Assert.assertEquals(actualTime, expectedTime);
-
     }
-
 
     @AfterMethod
     public void teardown(){
