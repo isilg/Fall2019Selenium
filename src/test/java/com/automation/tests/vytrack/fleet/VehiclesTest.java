@@ -42,11 +42,11 @@ public class VehiclesTest {
     public void verifyPageSubTitle() {
         WebElement subTitleElement = driver.findElement(subtitleBy);
         System.out.println(subTitleElement.getText());
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
 
         String expected = "All Cars";
         String actual = subTitleElement.getText();
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
 
         Assert.assertEquals(actual , expected);
 

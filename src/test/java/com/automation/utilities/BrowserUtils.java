@@ -1,7 +1,6 @@
 package com.automation.utilities;
 
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;

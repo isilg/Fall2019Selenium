@@ -40,7 +40,7 @@ public class LoginPageTest {
     }
 
     //login as store manager and verify title of the page is Dashboard
-    @Test(description = "Login as store manager and verify that title is equals to  'Dashboard' ")
+    @Test(description = "Login as store manager and verify that title is equals to 'Dashboard'")
     public void loginAsStoreManager(){
         driver.findElement(usernameBy).sendKeys("storemanager85");
         driver.findElement(passwordBy).sendKeys("UserUser123", Keys.ENTER);
@@ -48,7 +48,7 @@ public class LoginPageTest {
 
         String expected = "Dashboard";
         String actual = driver.getTitle();  //getTitle() brings title of the page
-        assertEquals(actual, expected, "Page title isnt correct");
+        assertEquals(actual, expected, "Page title isn't correct");
     }
 
 
