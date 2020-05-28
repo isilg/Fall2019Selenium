@@ -12,7 +12,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -106,7 +105,7 @@ public class CalenderEventsClass {
         Assert.assertEquals(actualDate, expectedDate);
 
         //Default start time should be current time
-        // IF WE DONT PUT ZoneId.of("GMT-7"), THIS TEST WILL FAIL CAUSE IT IS EXPECTED LOCAL TIME ZONE, IT IS NOT GIVING THE TIME
+        //IF WE DONT PUT ZoneId.of("GMT-7"), THIS TEST WILL FAIL CAUSE IT IS EXPECTED LOCAL TIME ZONE, IT IS NOT GIVING THE TIME
         //ACCORDING TO UR LOCATION. IF U R DIFFERENT TIME ZONE IT WILL FAIL --> IT'S A BUG
         String expectedTime = LocalTime.now(ZoneId.of("GMT-7")).format(DateTimeFormatter.ofPattern("h:m a"));
         String actualTime =driver.findElement(startTimeBy).getAttribute("value");

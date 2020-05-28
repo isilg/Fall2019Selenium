@@ -8,13 +8,13 @@ public class ConfigurationReader {
 
     static {
         try {
-            //location of properties file
+          //location of properties file. We give path to congirutaion.properties file to be able to use properties file
             String path = System.getProperty("user.dir")+"/configuration.properties";
             //get that file as a stream
             FileInputStream input = new FileInputStream(path);
             //create object of Properties class
             configFile = new Properties();
-            //load properties file into Properties object
+            //load properties file into Properties object. Once we load it we can use it
             configFile.load(input);
             //close the input stream at the end
             input.close();
