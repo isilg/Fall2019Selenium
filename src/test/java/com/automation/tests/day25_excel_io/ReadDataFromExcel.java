@@ -64,6 +64,7 @@ public class ReadDataFromExcel {
         String spreadSheet = "QA1-all";
         ExcelUtil excelUtil = new ExcelUtil(path, spreadSheet);
         //https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html
+        //excelUtil returns collection of maps
         //  excelUtil.getDataList().forEach(System.out::println);
 
         for (Map<String, String> record : excelUtil.getDataList()) {
