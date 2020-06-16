@@ -8,11 +8,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-
+import org.testng.annotations.*;
 import java.io.IOException;
 
 //It is like a base of every test class. Kind of support for our test classes.It will give us reusability
@@ -27,15 +23,25 @@ public abstract class AbstractTestBase {
     protected ExtentTest test;
 
 
+    //@Optional - make parameter optional
+    //if u dont specify it, testng will require to specify this parameter for every test in xml runner
     @BeforeTest   // @BeforeTest is used to create report
-    public void setupTest(){
+    @Parameters("reportName")  //comes from testng runner file
+    public void setupTest(@Optional String reportName){  //I make it optional that means it isn't require to specify this parameter in the xml file
+                                                         //cause if I don't make it optional and if test won't this parameter it will give exception
+        System.out.println("Report name: "+reportName);  //reportName comes from testng runner file
         report = new ExtentReports();
+        //if reportName is null, then reportName will be report.html otherwise it will be reportName variable
+        reportName = reportName == null ? "report.html" : reportName; //if it is login ->login.html; if it is calender events, it will be calenderevents.html
+
+        report = new ExtentReports();
+
         String reportPath = "";
         //location of report file
         if (System.getProperty("os.name").toLowerCase().contains("win")) {
-            reportPath = System.getProperty("user.dir") + "\\test-output\\report.html";
+            reportPath = System.getProperty("user.dir") + "\\test-output\\" + reportName;
         } else {
-            reportPath = System.getProperty("user.dir") + "/test-output/ report.html";
+            reportPath = System.getProperty("user.dir") + "/test-output/" + reportName;
         }
         //is a HTML report itself
         htmlReporter = new ExtentHtmlReporter(reportPath);
@@ -45,7 +51,7 @@ public abstract class AbstractTestBase {
     }
 
 
-    @AfterTest  // release the report
+    @AfterTest  // release the report. After @AfterTest report will be generated
     public void teardownTest(){
         report.flush();
     }

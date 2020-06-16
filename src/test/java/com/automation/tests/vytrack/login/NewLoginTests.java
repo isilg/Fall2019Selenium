@@ -19,6 +19,7 @@ public class NewLoginTests extends AbstractTestBase {
         test = report.createTest("Verify page title");
         LoginPage loginPage = new LoginPage();  //loginPage is a page obj cause it is obj of page class
         loginPage.login();
+        BrowserUtils.wait(2);
         Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
         //if assertion passed, it will set test status in report to passed
         test.pass("Page title Dashboard was verified");
@@ -33,6 +34,7 @@ public class NewLoginTests extends AbstractTestBase {
                                                 //baglanti kurman lazim bunuda obj create ederek yapiyosun
        loginPage.login("wrong", "wrong");
        test.info("Login as store manager");  //log some steps
+        BrowserUtils.wait(2);
        Assert.assertEquals(loginPage.getWarningMessageText(), "Invalid user name or password.");
 
        BrowserUtils.getScreenshot("warning_message"); //call getScreenshot() method inside a test, give a name
@@ -43,7 +45,7 @@ public class NewLoginTests extends AbstractTestBase {
 
 
     //to connect our Data Provider with the test we create this
-    @Test(dataProvider="credentials")  // we give the name of Data provider to specify this test will receive test data from DataProvider called credentials
+    @Test(dataProvider="credentials")  //give the name of Data provider to specify this test receives test data from DataProvider called credentials
     public void loginWithDDT(String userName, String password){    //How can I insert parameters: inside the method signature I put 2 values.
                                                                    // 1th one corresponds 1th column("storemanager85","salesmanager110"),
                                                                    //2nd corresponds 2nd column("UserUser123" column)
@@ -51,7 +53,7 @@ public class NewLoginTests extends AbstractTestBase {
         LoginPage loginPage = new LoginPage();  //loginPage is a page obj cause it is obj of page class
         loginPage.login(userName, password);
         test.info("Login as");  //log some steps
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
         test.pass("Page title Dashboard was verified");
 
